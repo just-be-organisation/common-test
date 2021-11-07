@@ -5,6 +5,9 @@ import com.github.tomakehurst.wiremock.client.WireMock;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.equalTo;
 import static com.github.tomakehurst.wiremock.client.WireMock.get;
@@ -27,21 +30,21 @@ public abstract class WireMockSupport {
         wireMockServer.stop();
     }
 
-    protected void stub(String path, byte[] pageContent) {
+    public void stub(String path, byte[] pageContent) {
         wireMockServer.stubFor(get(urlEqualTo(path))
             .withHeader("Content-Type", equalTo("*/*"))
             .willReturn(aResponse().withBody(pageContent)));
     }
 
-    protected void stubVerify(String path) {
+    public void stubVerify(String path) {
         wireMockServer.verify(getRequestedFor(urlEqualTo(path)));
     }
 
-//    protected String getPath(SourcePage sourcePage) {
-//        try {
-//            return new URL(sourcePage.getUrl()).getPath();
-//        } catch (MalformedURLException e) {
-//            throw new IllegalStateException(e);
-//        }
-//    }
+    public String getPath(String url) {
+        try {
+            return new URL(url).getPath();
+        } catch (MalformedURLException e) {
+            throw new IllegalStateException(e);
+        }
+    }
 }
