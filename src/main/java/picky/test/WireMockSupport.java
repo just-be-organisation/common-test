@@ -47,4 +47,8 @@ public abstract class WireMockSupport {
             throw new IllegalStateException(e);
         }
     }
+
+    public String replaceHost(String url) {
+        return "http://localhost:8080" + getPath(url);
+    }
 }
