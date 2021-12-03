@@ -2,7 +2,7 @@
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
     <servers>
         <server>
-            <id>na</id>
+            <id>just-be</id>
             <username>${env.GITHUB_USER}</username>
             <password>${env.GITHUB_TOKEN}</password>
         </server>
@@ -10,33 +10,25 @@
 
     <profiles>
         <profile>
-            <id>na</id>
+            <id>just-be</id>
             <repositories>
                 <repository>
                     <id>central</id>
                     <url>https://repo1.maven.org/maven2</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
+                    <releases><enabled>true</enabled></releases>
+                    <snapshots><enabled>true</enabled></snapshots>
                 </repository>
                 <repository>
-                    <id>na</id>
-                    <name>news-aggregator-bot</name>
-                    <url>https://maven.pkg.github.com/news-aggregator-bot/artifactory</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
+                    <id>just-be</id>
+                    <name>better-artifactory</name>
+                    <url>https://maven.pkg.github.com/just-be-organisation/better-artifactory</url>
+                    <releases><enabled>true</enabled></releases>
+                    <snapshots><enabled>true</enabled></snapshots>
                 </repository>
             </repositories>
         </profile>
     </profiles>
     <activeProfiles>
-        <activeProfile>na</activeProfile>
+        <activeProfile>just-be</activeProfile>
     </activeProfiles>
 </settings>

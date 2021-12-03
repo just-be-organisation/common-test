@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>common-test</artifactId>
-    <groupId>picky</groupId>
+    <groupId>be.better</groupId>
     <version>0.1</version>
     <packaging>jar</packaging>
 
@@ -18,9 +18,9 @@
 
     <distributionManagement>
         <repository>
-            <id>na</id>
-            <name>picky</name>
-            <url>https://maven.pkg.github.com/news-aggregator-bot/artifactory</url>
+            <id>just-be</id>
+            <name>better-artifactory</name>
+            <url>https://maven.pkg.github.com/just-be-organisation/better-artifactory</url>
         </repository>
     </distributionManagement>
 
